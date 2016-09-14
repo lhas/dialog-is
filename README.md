@@ -11,3 +11,5 @@ Isso permite que a gente acople os dados somente a services, e injete estes serv
 assim vc evita qualquer tipo de conflito entre escopos e ainda deixa o código mais usável.
 
 ficou bem esdrúxulo, deixei tudo junto noa pp.js, mas deixei bem comentado para ficar claro quem faz o que.
+
+[1]: http://www.technofattie.com/2014/03/21/five-guidelines-for-avoiding-scope-soup-in-angular.html
