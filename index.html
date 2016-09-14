@@ -5,8 +5,9 @@
   <title>Dialog IS</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link rel="stylesheet" href="bower_components/ng-materialize/dist/ng-materialize.css">
 </head>
-<body>
+<body ng-app="app">
 
   <nav class="green">
     <div class="nav-wrapper">
@@ -17,14 +18,33 @@
   <div class="container">
     <h1>Escopo</h1>
 
-    <div input-field>
-      <input type="text" id="nome">
-      <label for="nome">Nome</label>
-    </div>
-  </div>
+    <form name="isForm" novalidate>
+      <div class="input-field">
+        <input
+          type="text"
+          class="validate"
+          id="nome"
+          name="nome"
+          ng-model="inputs.nome"
+          floating-label="Digite seu nome aqui"
+          character-counter="10"
+          ng-maxlength="10"
+          ng-required="true"/>
+
+        <div class="field-hint" ng-messages="isForm.nome.$error" ng-show="isForm.nome.$dirty">
+          <div ng-message="required">Este campo é obrigatório!</div>
+          <div ng-message="maxlength">Você não pode exceder 10 caracteres.</div>
+        </div> <!-- .field-hint -->
+
+      </div>
+    </form>
+
+  </div> <!-- .container -->
   
   <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-materialize/src/angular-materialize.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/waves/dist/waves.min.js"></script>
+  <script src="bower_components/ng-materialize/dist/ng-materialize.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
