@@ -16,7 +16,7 @@
   </nav>
 
   <div class="container" ng-controller="ContainerCtrl as $ctrl">
-    <h1 class="center">GO</h1>
+    <h1 class="center">GO - {{$ctrl.user.name}}</h1>
 
     <form name="isForm" novalidate>
 
@@ -33,6 +33,7 @@
           ng-maxlength="10"
           ng-required="true"/>
 
+
         <div class="field-hint" ng-messages="isForm.name.$error" ng-show="isForm.name.$dirty">
           <div ng-message="required">Este campo é obrigatório!</div>
           <div ng-message="maxlength">Você não pode exceder 10 caracteres.</div>
@@ -40,6 +41,8 @@
         
       </div> <!-- .input-field -->
 
+      <div class="clearfix"></div>
+           
       <button ng-click="$ctrl.openModal()" class="btn waves-effect light-blue waves-light" type="submit" name="action">Abrir Modal
         <i class="material-icons right">send</i>
       </button>

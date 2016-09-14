@@ -1,11 +1,10 @@
 <div class="modal-content">
   <h4 class="light black-text">Exemplo de Futuro Modal pro GO</h4>
-  <p ng-repeat="item in items">
-    <input type="radio" name="item" id="item-{{$index}}" value="{{item}}" ng-model="form.selectedItem"/>
-    <label for="item-{{$index}}">{{item}}</label>
-  </p>
+
+  Aqui está você, {{$ctrl.user.name}}, seu FDP! :D
+
+
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn light-blue" ng-click="select(form.selectedItem)">Enviar <i class="material-icons right">send</i> </button>
-  <button type="button" class="btn-flat" ng-click="cancel()"> Fechar <i class="material-icons right">delete</i></button>
+  <button type="button" class="btn-flat" ng-click="$ctrl.cancel()"> Fechar <i class="material-icons right">delete</i></button>
 </div>
