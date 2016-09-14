@@ -1,9 +1,11 @@
 (function() {
   'use strict';
 
+  // module.js
   angular
     .module('app', ['ngMaterialize']);
 
+  // container.controller.js
   angular
   .module('app')
   .controller('ContainerCtrl', ContainerCtrl);
@@ -14,13 +16,16 @@
 
     vm.openModal = openModal;
 
+    // function called when submit is called
     function openModal() {
 
+      // creating the modal instance!
       var modalInstance = $modal.open({
         templateUrl: 'views/modals/add_story.html',
         controller: 'ModalInstanceCtrl'
       });
 
+      // fallbacks from modal here
       modalInstance.result.then(success, error);
       
       function success(selectedItem) {
@@ -33,6 +38,7 @@
     }
   }
 
+  // modal-instance.controller.js
   angular
   .module('app')
   .controller('ModalInstanceCtrl', ModalInstanceCtrl);
